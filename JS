@@ -1,0 +1,49 @@
+const itemsObject = [
+  { quantity: 1, price: 200 },
+  { quantity: 3, price: 350 },
+  { quantity: 5, price: 400 },
+];
+
+// Given the array, implement a function for generating a new array which doubles the
+// quantity and price in each object.
+const doubleItem = (itemsObject) => {
+  return itemsObject.map((obj) => {
+    let doubleObj = {
+      quantity: obj.quantity * 2,
+      price: obj.price * 2,
+    };
+    return doubleObj;
+  });
+};
+console.log(doubleItem(itemsObject));
+
+// ● Given the array, implement a function for generating a new array which contains item
+// quantity > 2 and price > 300 only.
+const checkItem = (itemsObject) => {
+  return itemsObject.filter((obj) => {
+    return obj.quantity > 2 && obj.price > 300;
+  });
+};
+console.log(checkItem(itemsObject));
+
+// ● Given the array, implement a function to calculate the total value of the items.
+const totalValue = (itemsObject) => {
+  return itemsObject.map((obj) => {
+    let itemValue = {
+      value: obj.quantity * obj.price,
+    };
+    return itemValue.value;
+  });
+};
+let totalAmount = totalValue(itemsObject).reduce((acc, ele) => {
+  return acc + ele;
+});
+console.log(totalAmount);
+
+const string =
+  " Perhaps The Easiest-to-understand      Case For Reduce Is To Return The Sum Of All The Elements In An Array ";
+// Given the string, implement a function to remove all the non-alphabet characters and
+// extra space in the string and convert the string to all lowercase.
+
+let newString = string.toLowerCase().split(/[ -]+/).join(" ").trim();
+console.log(newString);
